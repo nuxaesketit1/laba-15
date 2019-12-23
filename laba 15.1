@@ -1,36 +1,37 @@
-using namespace std;
- 
 #include <iostream>
- 
-int main()  {
-setlocale(LC_ALL, "Russian");
- int N, i, j;
- cout << "N: ";  cin >> N;
- int* A = new int[N];
- cout << "Элементы массива A: " << endl;
- for (i=0; i<N; i++) {
- cout << "A[" << i << "]:";
-  cin >> A[i];
- }
- int* B = new int[N];
- cout << "Элементы массива B: " << endl;
- for (i=0; i<N; i++) {
- cout << "B[" << i << "]:";
-  cin >> B[i];
- }
- int* C = new int[N];
- for (i=0; i<N; i++) {
-     C[i]=A[i];
- }
- cout << "Новая матрица А: " << endl;
- for (i=0; i<N; i++) {
-     A[i]=B[i];
-     cout << "A[" <<  i << "]" << A[i] << endl;
- }
-  cout << "Новая матрица B: " << endl;
- for (i=0; i<N; i++) {
-     B[i]=C[i];
-     cout << "B[" <<  i << "]" << B[i] << endl;
- }
- return 0;
+#include <vector>
+using namespace std;
+int main()
+{
+  int n;
+  cout<<"Vvedite N"<<endl;
+  cin>>n;
+  vector<int> a(n);
+  cout<<"Vvedite massiv"<<endl;
+  for (int i=0; i<n; i++)
+  {
+    cin>>a[i];
+  }
+  vector<int> b(n);
+  cout<<"Vvedite massiv"<<endl;
+  for (int i=0; i<n; i++)
+  {
+    cin>>b[i];
+  }
+  int c;
+  for (int i=0; i<n; i++)
+  {
+    c=a[i];
+    a[i]=b[i];
+    b[i]=c;
+  }
+  for (int i=0; i<n; i++)
+  {
+    cout<<a[i]<<endl;
+  }
+  for (int i=0; i<n; i++)
+  {
+    cout<<b[i]<<endl;
+  }
+  return 0;
 }
